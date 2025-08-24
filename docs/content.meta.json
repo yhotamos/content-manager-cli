@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "generatedAt": "2025-08-24T08:39:13.942Z",
+  "count": 2,
+  "metas": [
+    {
+      "meta": {
+        "id": "yirknx3ban9",
+        "title": "ベストプラクティス",
+        "date": "2025-08-24",
+        "updated": "2025-08-24",
+        "category": "documentation",
+        "thumbnail": "",
+        "tags": [
+          "best-practice",
+          "workflow",
+          "guide"
+        ],
+        "slug": "docs",
+        "lang": "ja",
+        "author": ""
+      },
+      "filename": "best-practices",
+      "contentDir": "docs",
+      "contentName": "documentation",
+      "metaIndexFile": "content.meta.json",
+      "filePatterns": [
+        "**/*.md",
+        "**/*.txt",
+        "**/*.html"
+      ],
+      "rawContentPath": "docs",
+      "url": "docs/best-practices.md",
+      "visibility": "public",
+      "priority": 0,
+      "createdBy": "",
+      "modifiedBy": "",
+      "relatedIds": [],
+      "headings": [],
+      "contentStats": {
+        "charCount": 4660,
+        "wordCount": 375,
+        "lineCount": 187,
+        "readingTime": 2,
+        "headingCount": 0,
+        "imageCount": 0,
+        "codeBlockCount": 0
+      }
+    },
+    {
+      "meta": {
+        "id": "wl68kvnhivc",
+        "title": "コマンドリファレンス",
+        "date": "2025-08-24",
+        "updated": "2025-08-24",
+        "category": "",
+        "thumbnail": "",
+        "tags": [
+          "command",
+          "reference",
+          "guide"
+        ],
+        "slug": "docs",
+        "lang": "ja",
+        "author": ""
+      },
+      "filename": "command-reference",
+      "contentDir": "docs",
+      "contentName": "uncategorized",
+      "metaIndexFile": "content.meta.json",
+      "filePatterns": [
+        "**/*.md",
+        "**/*.txt",
+        "**/*.html"
+      ],
+      "rawContentPath": "docs",
+      "url": "docs/command-reference.md",
+      "visibility": "public",
+      "priority": 0,
+      "createdBy": "",
+      "modifiedBy": "",
+      "relatedIds": [],
+      "headings": [],
+      "contentStats": {
+        "charCount": 3689,
+        "wordCount": 360,
+        "lineCount": 165,
+        "readingTime": 2,
+        "headingCount": 0,
+        "imageCount": 0,
+        "codeBlockCount": 0
+      }
+    }
+  ]
+}

@@ -13,7 +13,7 @@
 
 ## 要件
 
-- Node.js (LTS版を推奨)
+- Node.js (LTS 版を推奨)
 
 ## インストール
 
@@ -24,11 +24,11 @@ npm install -g content-manager-cli
 ## 基本的な構文
 
 ```
-content <command> [targetDir] [options]
+content <command> [contentDir] [options]
 ```
 
 - `<command>`: 実行するコマンド (`init`, `create`, `build` など)
-- `[targetDir]`: `content.config.json` が配置されている，または作成されるディレクトリ．多くのコマンドで必須です．
+- `[contentDir]`: `content.config.json` が配置されている，または作成されるディレクトリ．多くのコマンドで必須です．
 - `[options]`: `-c, --category` のようなコマンド固有のオプション．
 
 ## 基本的な使い方
@@ -51,16 +51,28 @@ content <command> [targetDir] [options]
 3.  **コンテンツの作成**
 
     カテゴリ `news`，タイトル `my-first-post` でコンテンツを作成します．
-    `-s c/t` は `category/title` のショートカットで，`<カテゴリ>/<タイトル>` というディレクトリ構造を意味します．
+    `--structure category/title` は `<カテゴリ>/<タイトル>` というディレクトリ構造を意味します．
 
     ```bash
     # ./content/news/my-first-post/index.md が作成される
+    content create content --structure category/title --category news --title "my-first-post"
+    ```
+
+    ショートカット記法を使用すると，以下のように書くこともできます．
+
+    ```bash
     content create content -s c/t -c news -t "my-first-post"
     ```
 
 4.  **メタデータのビルド**
 
-    カテゴリ(`-c news`)を指定し，そのカテゴリのディレクトリ(`--target c`)をビルドします．これにより，`content/news/content.meta.json` が生成されます．
+    カテゴリ(`--category news`)を指定し，そのカテゴリのディレクトリ(`--target category`)をビルドします．これにより，`content/news/content.meta.json` が生成されます．
+
+    ```bash
+    content build content --target category --category news
+    ```
+
+    ショートカット記法を使用すると，以下のように書くこともできます．
 
     ```bash
     content build content --target c -c news
@@ -78,48 +90,25 @@ my-project/
     └── content.config.json　      # initコマンドで生成
 ```
 
+---
+
+## ドキュメント
+
+より詳細な情報については，以下のドキュメントを参照してください．
+
+- **[コマンドリファレンス](./docs/command-reference.md)**: 全てのコマンドと，そのオプションの詳細な説明．
+- **[ベストプラクティス](./docs/best-practices.md)**: 推奨されるコンテンツ管理のワークフローと実践的な例．
+
 ## コマンド一覧
 
-### `content init [contentDir] [options]`
+| コマンド           | 説明                                                         |
+| ------------------ | ------------------------------------------------------------ |
+| `content init`     | 新しいコンテンツ管理プロジェクトを初期化します．             |
+| `content create`   | 新しいコンテンツを作成します．                               |
+| `content build`    | コンテンツのメタデータをビルドし，一覧ファイルを生成します． |
+| `content gh-pages` | GitHub Pages への公開用ワークフローを生成します．            |
 
-新しいコンテンツプロジェクトを初期化し，設定ファイル `content.config.json` を作成します．
-
-- `[contentDir]`: 初期化するディレクトリ (デフォルト: `content`)
-- `-c, --content-name <name>`: コンテンツプロジェクト名
-- `-a, --author <name>`: デフォルトの作成者名
-- `-l, --lang <lang>`: デフォルトの言語コード (例: `ja`, `en`)
-- `-f, --file-patterns <patterns>`: 対象コンテンツのファイルパターン (カンマ区切り)
-
-### `content create <contentDir> [options]`
-
-新しいコンテンツファイルを作成します．
-
-- `<contentDir>`: `content.config.json` があるディレクトリ
-- `-s, --structure <structure>`: ディレクトリ構造 (`category`, `date`, `title` の組み合わせ)
-- `-c, --category <category>`: カテゴリ名 (`structure` に `category` を含む場合は必須)
-- `-d, --date [date]`: 作成日 (`YYYY-MM-DD` または `today`) (デフォルト: `today`)
-- `-t, --title [title]`: タイトル (デフォルト: `untitled`)
-- `-f, --filename [filename]`: ファイル名 (デフォルト: `index`)
-- `--force`: 既存ファイルを上書き
-
-### `content build <contentDir> [options]`
-
-コンテンツを解析し，メタデータファイル (`content.meta.json`) を生成・更新します．
-
-- `<contentDir>`: `content.config.json` があるディレクトリ
-- `--target <structure>`: 出力対象を単一ディレクトリに指定
-- `-c, --category <category>`: 指定カテゴリのみを対象
-- `--pretty`: JSON を整形して出力
-
-### `content gh-pages <contentDir> [options]`
-
-GitHub Pages への公開用ワークフロー (`.github/workflows/content-gh-pages.yml`) を生成します．
-
-- `<contentDir>`: `content.config.json` があるディレクトリ
-- `-b, --branch <branch>`: デプロイ先のブランチ (デフォルト: `main`)
-- `-d, --build-dir <dir>`: ビルド成果物が格納されるディレクトリ
-- `-r, --ext-repo <repo>`: 外部リポジトリの URL
-- `-f, --force`: 既存のワークフローファイルを上書き
+詳細は[コマンドリファレンス](./docs/command-reference.md)を参照してください．
 
 ## 設定ファイル (`content.config.json`)
 
