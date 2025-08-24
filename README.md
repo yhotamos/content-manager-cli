@@ -1,6 +1,8 @@
 # Content Manager CLI
 
-[![npm version](https://badge.fury.io/js/content-manager-cli.svg)](https://badge.fury.io/js/content-manager-cli)
+![NPM Version](https://img.shields.io/npm/v/%40yhotamos%2Fcontent-manager-cli)
+![NPM Downloads](https://img.shields.io/npm/dm/%40yhotamos%2Fcontent-manager-cli)
+![NPM License](https://img.shields.io/npm/l/%40yhotamos%2Fcontent-manager-cli)
 
 カテゴリごとに Markdown コンテンツとメタ情報を管理できる汎用 CLI ツールです．
 
@@ -18,7 +20,7 @@
 ## インストール
 
 ```bash
-npm install -g content-manager-cli
+npm install -g @yhotamos/content-manager-cli
 ```
 
 ## 基本的な構文

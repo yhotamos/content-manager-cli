@@ -1,5 +1,5 @@
 {
-  "name": "content-manager-cli",
+  "name": "@yhotamos/content-manager-cli",
   "version": "0.5.1",
   "description": "カテゴリごとに Markdown コンテンツとメタ情報を管理できる汎用 CLI ツール",
   "main": "index.js",
